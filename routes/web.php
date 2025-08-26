@@ -28,8 +28,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 
     Route::resource('books', AdminBookController::class)->names('books');
     Route::resource('categories', CategoryController::class)->names('categories');
-    Route::patch('/books/{book}/toggle', [AdminBookController::class, 'toggleAvailability'])
-        ->name('books.toggle');
+    Route::patch('/books/{book}/toggle', [AdminBookController::class, 'toggleAvailability'])->name('books.toggle');
 });
 
 require __DIR__.'/auth.php';
